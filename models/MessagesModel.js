@@ -1,7 +1,7 @@
 const config = require('../config/db');
 
 const messageSchema = new config.Schema({
-    _id: {type: config.Schema.Types.ObjectId, auto: true},
+    // _id: {type: config.Schema.Types.ObjectId, auto: true},
     sender: {type: config.Schema.Types.ObjectId, ref: 'User', required: true},
     receiver: {type: config.Schema.Types.ObjectId, ref: 'User', required: true},
     message: {type: String, required: true},

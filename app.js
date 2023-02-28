@@ -1,9 +1,13 @@
 const express = require('express');
+// const cors = require('cors');
 const routes = require('./routes/routes');
 const app = express();
 const port = 3000;
-const moogose = require("./config/db");
 
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+// app.use(cors());
 app.use(
     (req, res, next) => {
         res.setHeader('Access-Control-Allow-Origin', '*');

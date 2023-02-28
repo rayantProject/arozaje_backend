@@ -7,7 +7,8 @@ const plantSchema = new moogoose.Schema({
     mainImage: {type: Array, required: true},
     images: {type: Array, required: true},  
     owner: {type: moogoose.Schema.Types.ObjectId, ref: 'User', required: true},
-    discussions: [{type: moogoose.Schema.Types.ObjectId, ref: 'Discussion'}]
+    renter: {type: moogoose.Schema.Types.ObjectId, ref: 'User', required: false},
+    // discussions: [{type: moogoose.Schema.Types.ObjectId, ref: 'Discussion'}]
     
 });
 

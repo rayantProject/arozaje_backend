@@ -66,12 +66,30 @@ const deleteUser = async (req, res) => {
     }
     }
 
+const login = async (req, res) => {
+    try {
+        const user = await User.findOne({ email: req.body.email });
+        if (!user) {
+            return res.status(400).json({ message: 'Adresse e-mail ou mot de passe incorrect.' });
+        }
+        if (user.password !== req.body.password) {
+            return res.status(400).json({ message: 'Adresse e-mail ou mot de passe incorrect.' });
+        }
+        res.status(200).json({ message: 'Authentification réussie.' });
+      } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Erreur serveur.' });
+      }
+}
+
+
 module.exports = {
     getUser,
     getAllUsers,
     createUser,
     updateUser,
-    deleteUser
+    deleteUser,
+    login
 }
 
 

@@ -7,6 +7,7 @@ const userSchema = new config.Schema({
     password: {type: String, required: true},
     email: {type: String, required: true, unique: true},
     firstName: {type: String, required: true},
+    rate: {type: Number, enum :[1, 2 , 3, 4, 5], required: false},
     lastName: {type: String, required: true},
     address: {type: String, required: true},
     avatar : {type: String, required: false},

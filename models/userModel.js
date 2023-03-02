@@ -4,7 +4,6 @@ const config = require('../config/db');
 
 const userSchema = new config.Schema({
     _id: {type: config.Schema.Types.ObjectId, auto: true},    
-    username: {type: String, required: true, unique: true},
     password: {type: String, required: true},
     email: {type: String, required: true, unique: true},
     firstName: {type: String, required: true},

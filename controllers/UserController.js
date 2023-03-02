@@ -75,7 +75,19 @@ const login = async (req, res) => {
         if (user.password !== req.body.password) {
             return res.status(400).json({ message: 'Adresse e-mail ou mot de passe incorrect.' });
         }
-        res.status(200).json({ message: 'Authentification réussie.' });
+        res.status(200).json(
+            {
+                id: user.id,
+                firstName: user.firstName,
+                lastName: user.lastName,
+                role: user.role,
+                avatar: user.avatar,
+                address: user.address,
+                avatar: user.avatar ? user.avatar : null,
+                rate: user.rate ? user.rate : null,
+            }
+                
+        );
       } catch (error) {
         console.error(error);
         res.status(500).json({ message: 'Erreur serveur.' });

@@ -83,8 +83,8 @@ const login = async (req, res) => {
                 role: user.role,
                 avatar: user.avatar,
                 address: user.address,
-                avatar: user.avatar ? user.avatar : null,
-                rate: user.rate ? user.rate : null,
+                avatar: user.avatar ? user.avatar : "",
+                rate: user.rate ? user.rate : 0,
             }
                 
         );
